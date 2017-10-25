@@ -1,0 +1,30 @@
+<?xml version="1.0"?>  
+<example>  
+	<author>Mr-陈</author>
+	<address>******</address>
+	<sex>male</sex>
+	<appraisal>人生就是起起落落落落落落落落</appraisal>
+	<userlist>
+		<user>
+			<name>nameless</name>
+			<sex>female</sex>
+			<career>singer</career>
+			<nationality>Japan</nationality>
+			<appraisal>特别棒的妹子</appraisal>
+		</user>
+		<user>
+			<name>成步堂龙一</name>
+			<sex>male</sex>
+			<career>lawyer</career>
+			<nationality>Japan</nationality>
+			<appraisal>异议！</appraisal>
+		</user>
+		<user>
+			<name>Linke</name>
+			<sex>male</sex>
+			<career>adventurey</career>
+			<nationality>Japan</nationality>
+			<appraisal>.....</appraisal>
+		</user>
+	</userlist>  
+</example> 
