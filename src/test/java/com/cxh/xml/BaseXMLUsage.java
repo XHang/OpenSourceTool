@@ -13,7 +13,10 @@ import org.dom4j.Element;
 import org.dom4j.Node;
 import org.dom4j.io.SAXReader;
 import org.junit.Test;
+import com.cxh.bean.Game;
+import com.cxh.bean.QQUser;
 import com.cxh.bean.User;
+import com.cxh.converter.XStreamEmptyTagConverter;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
@@ -95,6 +98,33 @@ public class BaseXMLUsage {
 		xStream.alias("userList", List.class);
 		System.out.println("下面将list对象转成对象");
 		System.out.println(xStream.toXML(users));
+	}
+	
+	/**
+	 * 演示xml转对象的空标签问题
+	 */
+	@Test
+	public void xml2ObjectQuestion(){
+		InputStream in = this.getClass().getResourceAsStream("/question.xml");
+		XStream xStream  = new XStream(new DomDriver());
+		xStream.alias("game", Game.class);
+		xStream.registerLocalConverter(Game.class, "age", new XStreamEmptyTagConverter());
+		System.out.println(in);
+		Game game = (Game) xStream.fromXML(in);
+		System.out.println(game);
+	}
+	
+	/**
+	 * 演示对象的集合字段转xml的问题
+	 */
+	@Test
+	public void object2XMLQuestion(){
+		XStream xStream = new XStream(new DomDriver());
+		QQUser qq = new QQUser("陈厦航", "曽根美雪","林可","成步堂龙一");
+		xStream.processAnnotations(QQUser.class);
+		xStream.alias("QQ", QQUser.class);
+		System.out.println("输出的XML是");
+		System.out.println(xStream.toXML(qq));
 	}
 	
 	
