@@ -1,11 +1,42 @@
 package com.cxh.bean;
 
+import java.util.List;
+import com.cxh.annotation.OnlySerialization;
+
 public class Game {
+	
+	@OnlySerialization("年龄")
 	private String name;
+	@OnlySerialization
 	private Integer age;
+	
 	private String limitage;
+	
 	private String maker;
+	
 	private String lead;
+	
+	@OnlySerialization("主角")
+	private User protagonist;
+	
+	
+	
+	public List<User> getSupportingRole() {
+		return supportingRole;
+	}
+	public void setSupportingRole(List<User> supportingRole) {
+		this.supportingRole = supportingRole;
+	}
+	
+	@OnlySerialization("配角们")
+	private List<User> supportingRole;
+	
+	public User getProtagonist() {
+		return protagonist;
+	}
+	public void setProtagonist(User protagonist) {
+		this.protagonist = protagonist;
+	}
 	public String getLead() {
 		return lead;
 	}

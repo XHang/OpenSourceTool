@@ -1,6 +1,11 @@
 package com.cxh.bean;
 
+import com.cxh.annotation.OnlySerialization;
+
+@OnlySerialization("配角")
 public class User {
+	
+	@OnlySerialization("名字")
 	private String name;
 	
 	private String sex;
