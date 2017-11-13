@@ -1,10 +1,14 @@
 package com.cxh.WordApplication;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.io.OutputStream;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
 import org.junit.Test;
+
+import com.cxh.wordApplication.WordApplication;
 
 public class WordApplicationTest {
 	
@@ -30,7 +34,9 @@ public class WordApplicationTest {
 	}
 	
 	@Test
-	public void test(){
-		XWPFDocument doc = new XWPFDocument();
+	public void testXMLToWord() throws Exception{
+		InputStream in = new FileInputStream("D://team.xml");
+		WordApplication.XMLToWord(in,"D://team.docx");
+		in.close();
 	}
 }
