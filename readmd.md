@@ -20,4 +20,20 @@ XWPF 支持Word 2007 的.docx格式读和写
 1. Dom4j使用Xpat要加入一个jaxen依赖，该依赖不会自动添加，需要手动添加
 
 2. 没有遍历某个标签下所有标签的Junit测试
+### 制造，读取Excel
+该工程主要是学习用java生成Excel文档。用POI实现吧
+使用的POI版本是：3.17
+以上，没有了
 
+#### 初步认识
+POI库里面对于EXCEL的处理主要分为两类
+一类是：HSSF ，它支持Microsoft Excel 97（-2003）文件格式的读写
+一类是：XSSF ，它支持Microsoft Excel XML（2007+）文件格式（OOXML）的读写
+然后还有一个包：SS 它提供通用的API为两种文件提供通用支持
+
+POI库里面对于Word的处理主要分为两类
+一类是：HWPF ，它支持Microsoft Excel 97（-2003）文件格式的读写
+一类是：XWPF ，它支持Microsoft Excel XML（2007+）文件格式（OOXML）的读写
+
+#### 疑难杂症
+如果单元格的宽度不够，有些日期可能会显示####，这并不是格式问题，你试试把单元格宽度调宽点
