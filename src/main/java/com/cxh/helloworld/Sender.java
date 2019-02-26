@@ -1,4 +1,4 @@
-package com.cxh.send;
+package com.cxh.helloworld;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
