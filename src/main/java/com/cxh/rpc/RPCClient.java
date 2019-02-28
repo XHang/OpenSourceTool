@@ -79,18 +79,5 @@ public class RPCClient implements AutoCloseable{
         connection.close();
 
     }
-    //TODO 我发现我自始至终都对final不理解。。。
-    //其实是编译器优化啦
-    public static void main(String[] args)  {
-        String a = "hello2";
-        final String b = "hello";
-        String d = "hello";
-        String c = b + 2;
-        String e = d + 2;
-        System.out.println((a == c));
-        System.out.println((a == e));
-        String  aaa = "hahahah";
-        String  bbb = "hahahah";
-        System.out.println(aaa==bbb);
-    }
+
 }
