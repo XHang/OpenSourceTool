@@ -35,6 +35,7 @@ public class Sender {
         try (Connection connection = factory.newConnection();
              Channel channel = connection.createChannel()) {
             channel.exchangeDeclare(EXCHANGE_NAME, "topic");
+            //这里的routingKey也叫topic
             String routingKey = getRoutingKey();
             System.out.println("please input message");
             String message =  getInput();
